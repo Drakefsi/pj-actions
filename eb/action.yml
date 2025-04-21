@@ -90,7 +90,7 @@ runs:
         sudo pip config --global set global.trusted-host ${PROXY_DOMAIN}
         python -m pip install --upgrade pip
         pip install urllib3==1.26.9
-        pip install awsebcli --upgrade
+        pip install 'awsebcli<3.20.3'
       env:
         PROXY_DOMAIN: nexus.nexus.svc.local
         PROXY_PORT: 8081
