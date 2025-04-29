@@ -90,12 +90,10 @@ runs:
     - name: 🧰 Install eb-cli
       shell: bash
       run: |
-        sudo python -m pip install --upgrade pip
+        python -m pip install --upgrade pip setuptools wheel 
         sudo pip config --global set global.index-url http://${PROXY_DOMAIN}:${PROXY_PORT}${PROXY_PATH}
         sudo pip config --global set global.trusted-host ${PROXY_DOMAIN}
         pip install urllib3==1.26.9
-        pip install 'awsebcli<3.20.3'
-        pip install setuptools>=70.1
       env:
         PROXY_DOMAIN: nexus.nexus.svc.local
         PROXY_PORT: 8081
