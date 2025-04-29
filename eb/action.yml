@@ -91,12 +91,12 @@ runs:
       shell: bash
       run: |
         sudo python -m pip install --upgrade pip
-        sudo pip install setuptools>=70.1
-        sudo pip install wheel>=0.42
         sudo pip config --global set global.index-url http://${PROXY_DOMAIN}:${PROXY_PORT}${PROXY_PATH}
         sudo pip config --global set global.trusted-host ${PROXY_DOMAIN}
         pip install urllib3==1.26.9
         pip install 'awsebcli<3.20.3'
+        pip install setuptools>=70.1
+        pip install wheel>=0.42
       env:
         PROXY_DOMAIN: nexus.nexus.svc.local
         PROXY_PORT: 8081
