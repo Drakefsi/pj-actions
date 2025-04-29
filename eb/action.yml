@@ -91,7 +91,8 @@ runs:
       shell: bash
       run: |
         sudo python -m pip install --upgrade pip
-        sudo pip install --upgrade setuptools wheel
+        sudo pip install setuptools>=70.1
+        sudo pip install wheel>=0.42
         sudo pip config --global set global.index-url http://${PROXY_DOMAIN}:${PROXY_PORT}${PROXY_PATH}
         sudo pip config --global set global.trusted-host ${PROXY_DOMAIN}
         pip install urllib3==1.26.9
